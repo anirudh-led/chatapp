@@ -74,10 +74,21 @@ function App() {
           groups.find((g) => g.id === selected.id)?.name || 'Select a chat'}  
         </div>
 
-        <div className="mt-4 border rounded p-4 h-full bg-white flex flex-col">
-          {/* Placeholder chat area */}
-          <div className='border rounded-xl mt-2 p-2 w-fit'>{/* Gray message */}Lorem ipsum dolor sit amet consectetur adipisicing elit. In, est.</div>
-          <div className='border rounded-xl mt-2 p-2 w-fit bg-amber-200 self-end'>{/* Orange message (mine) */}Lorem ipsum dolor sit amet consectetur adipisicing elit. In, est.</div>
+        <div className="mt-4 border rounded p-4 h-full bg-white flex flex-col min-h-0">
+          {/* Scrollable messages area that stays pinned to the bottom */}
+          <div className="flex-1  m-2 overflow-auto flex flex-col justify-end space-y-2">
+            <div className='border rounded-xl mt-2 p-2 w-fit'>{/* Gray message */}Lorem ipsum dolor sit amet consectetur adipisicing elit. In, est.</div>
+            <div className='border rounded-xl mt-2 p-2 w-fit bg-amber-200 self-end'>{/* Orange message (mine) */}Lorem ipsum dolor sit amet consectetur adipisicing elit. In, est.</div>
+          </div>
+          
+          <div className='flex items-center justify-center flex-row'>
+            <input
+              className="p-2 rounded border w-3xl"
+              placeholder="Type a message..."
+              aria-label="Type a message"
+            />
+            <button className="mx-2 px-4 py-2 bg-green-500 text-white rounded transition-colors hover:bg-green-600 hover:cursor-pointer active:bg-green-700">Send</button>
+          </div>
         </div>
       </main>
     </div>
