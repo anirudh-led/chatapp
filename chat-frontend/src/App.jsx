@@ -69,13 +69,15 @@ function App() {
 
       {/* Main chat area */}
       <main className="flex-1 p-6">
-        <div className="text-sm text-gray-600">
-          Selected: {selected.type} #{selected.id}
+        <div className="text-xl border-black text-orange-300">
+          {dms.find((dm) => dm.id === selected.id)?.name ||
+          groups.find((g) => g.id === selected.id)?.name || 'Select a chat'}  
         </div>
 
-        <div className="mt-4 border rounded p-4 h-full bg-white">
+        <div className="mt-4 border rounded p-4 h-full bg-white flex flex-col">
           {/* Placeholder chat area */}
-          <div className="text-gray-500">Chat messages will appear here.</div>
+          <div className='border rounded-xl mt-2 p-2 w-fit'>{/* Gray message */}Lorem ipsum dolor sit amet consectetur adipisicing elit. In, est.</div>
+          <div className='border rounded-xl mt-2 p-2 w-fit bg-amber-200 self-end'>{/* Orange message (mine) */}Lorem ipsum dolor sit amet consectetur adipisicing elit. In, est.</div>
         </div>
       </main>
     </div>
